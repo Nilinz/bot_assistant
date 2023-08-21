@@ -1,4 +1,4 @@
-# This is my copy of CLI helper from HeavyDevs
+# This is my copy of CLI helper from HeavyDevs (GOIT Python 15 project)
 
 Personal helper with 3 subroutines:
 
