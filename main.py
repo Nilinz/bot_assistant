@@ -9,18 +9,32 @@ TEXT_COLOR = {
     "green": "\033[32m",
     "reset": "\033[0m"
 }
+
+
 class UserInterface(ABC):
     @abstractmethod
     def run(self):
         pass
 
+    @abstractmethod
+    def display_info(self, message):
+        pass
+
 class AddressBookUI(UserInterface):
     def run(self):
+        self.display_info("Running Address Book...")
         address_book_main_func()
+
+    def display_info(self, message):
+        rprint(f"[green]Address Book:[reset] {message}")
 
 class NotesUI(UserInterface):
     def run(self):
+        self.display_info("Running Notes...")
         notes_main_func()
+
+    def display_info(self, message):
+        rprint(f"[green]Notes:[reset] {message}")
 
 class SortingFilesUI(UserInterface):
     def run(self):
@@ -33,6 +47,9 @@ class SortingFilesUI(UserInterface):
         else:
             print('Incorrect input!')
 
+    def display_info(self, message):
+        rprint(f"[green]Sorting Files:[reset] {message}")
+
 class ConsoleBot:
     def __init__(self):
         self.interfaces = {
@@ -40,6 +57,7 @@ class ConsoleBot:
             'notebook': NotesUI(),
             'sorting_files': SortingFilesUI(),
         }
+
     def run(self):
         print("\nHi, I'm your personal helper!")
 
