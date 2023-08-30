@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 platformdirs = ">=3.10.0"
 rich = ">=13.5.2"
+setuptools = "*"
+wheel = "*"
 
 [dev-packages]
 
