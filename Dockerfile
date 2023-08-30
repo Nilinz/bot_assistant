@@ -11,10 +11,11 @@ WORKDIR $APP_HOME
 # Скопіюємо інші файли в робочу директорію контейнера
 COPY . .
 # Встановимо залежності всередині контейнера
-RUN pip install -r requirements.txt
+RUN pip install bot_assistant-0.1.0-py3-none-any.whl
+RUN pip install pipenv
 
 # Позначимо порт, де працює застосунок всередині контейнера
 EXPOSE 5000
 
 # Запустимо наш застосунок всередині контейнера
-ENTRYPOINT ["python", "./main.py"]
+ENTRYPOINT ["bot-assistant"]
