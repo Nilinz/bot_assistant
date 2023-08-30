@@ -12,8 +12,7 @@ WORKDIR $APP_HOME
 COPY . .
 # Встановимо залежності всередині контейнера
 RUN pip install pipenv
-RUN pip install bot_assistant-0.1.0-py3-none-any.whl
-
+RUN requirements.txt
 
 # Позначимо порт, де працює застосунок всередині контейнера
 EXPOSE 5000
